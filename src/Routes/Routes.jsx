@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router";
-import About from "../Components/About/About.jsx";
 import Root from "../Layout/Root.jsx";
+import About from "../Pages/About/About.jsx";
+import Career from "../Pages/Career/Career.jsx";
+import CategoryNews from "../Pages/CategoryNews/CategoryNews.jsx";
 import Home from "./../Components/Home/Home";
 
 export const router = createBrowserRouter([
@@ -9,7 +11,15 @@ export const router = createBrowserRouter([
     Component: Root,
     children: [
       { path: "/", index: true, Component: Home },
-      { path: "/about", Component: About },
+      { path: "/category/:id", Component: CategoryNews },
     ],
+  },
+  {
+    path: "/career",
+    Component: Career,
+  },
+  {
+    path: "/about",
+    Component: About,
   },
 ]);
